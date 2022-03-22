@@ -9,6 +9,10 @@
 #include "helloworld.h"
 
 string Helloworld::sayHello(){
-    string resultat = "Hello world";
-    return resultat;
+    return "Hello world";
+}
+
+string Helloworld::sayHello(string& name){
+        string resultat = "Hello " + name;
+        return resultat;
 }

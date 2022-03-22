@@ -13,6 +13,7 @@ using namespace std;
 
 class Helloworld {
 public:
+    string sayHello(string &name);
     string sayHello();
 };
 #endif /* helloworld_h */

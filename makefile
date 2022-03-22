@@ -1,7 +1,7 @@
 CC = g++
 CFLAGS = -Wall -g -std=c++17
 TARGET = myprogram
-RM = rm
+RM = rm -f
 
 $(TARGET): main.o helloworld.o
 	$(CC) $(CFLAGS) -o $(TARGET) main.o helloworld.o
@@ -13,7 +13,7 @@ helloworld.o: helloworld.cpp helloworld.h
 	$(CC) $(CFLAGS) -c helloworld.cpp
 
 
-test: test.o
+test: test.o helloworld.o
 	$(CC) $(CFLAGS) -o test test.o helloworld.o
 	./test
 
@@ -24,6 +24,7 @@ test.o: test.cpp
 
 
 clean:
-	$(RM) $(TARGET)
 	$(RM) *.o
+	$(RM) $(TARGET)
+	$(RM) test
 
