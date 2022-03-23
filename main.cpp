@@ -25,8 +25,7 @@ void retourneStringComposante() { //print pour l'instant pour test
 
 int main()
 {
-    //retourneStringComposante();
-    Helloworld h;
-    cout<< h.sayHello();
+    retourneStringComposante();
+    
     return 0;
 }

@@ -3,18 +3,18 @@ CFLAGS = -Wall -g -std=c++17
 TARGET = myprogram
 RM = rm -f
 
-$(TARGET): main.o helloworld.o
-	$(CC) $(CFLAGS) -o $(TARGET) main.o helloworld.o
+$(TARGET): main.o nports.o
+	$(CC) $(CFLAGS) -o $(TARGET) main.o nports.o
 
 main.o: main.cpp
 	$(CC) $(CFLAGS) -c main.cpp
 
-helloworld.o: helloworld.cpp helloworld.h
-	$(CC) $(CFLAGS) -c helloworld.cpp
+nports.o: nports.cpp nports.h
+	$(CC) $(CFLAGS) -c nports.cpp
 
 
-test: test.o helloworld.o
-	$(CC) $(CFLAGS) -o test test.o helloworld.o
+test: test.o nports.o
+	$(CC) $(CFLAGS) -o test test.o nports.o
 	./test
 
 test.o: test.cpp
