@@ -8,15 +8,18 @@ using namespace std;
 
 class Nports {
 public:
-    Nports(string& type, vector<complex<double>>& parameters, vector<string>& connexions, string& name);
+    Nports(string type, vector<complex<double>>& parameters, vector<string>& connexions, string name);
     string getType();
     vector<complex<double>> getParameters();
     vector<string> getConnexions();
     string getName();
-private:
+protected: 
+    Nports();
     string type;
     vector<complex<double>> parameters;
     vector<string> connexions;
     string name;
+private:
+    
 };
 #endif /* nports_h */

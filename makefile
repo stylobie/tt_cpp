@@ -12,9 +12,15 @@ main.o: main.cpp
 nports.o: nports.cpp nports.h
 	$(CC) $(CFLAGS) -c nports.cpp
 
+resistance.o: nports.o resistance.cpp resistance.h
+	$(CC) $(CFLAGS) -c resistance.cpp
 
-test: test.o nports.o
-	$(CC) $(CFLAGS) -o test test.o nports.o
+circuitreader.o: circuitreader.h circuitreader.cpp
+	$(CC) $(CFLAGS) -c circuitreader.cpp
+
+
+test: test.o nports.o resistance.o circuitreader.o
+	$(CC) $(CFLAGS) -o test test.o nports.o resistance.o circuitreader.o
 	./test
 
 test.o: test.cpp
@@ -22,9 +28,8 @@ test.o: test.cpp
 
 
 
-
 clean:
 	$(RM) *.o
 	$(RM) $(TARGET)
+	$(RM) main
 	$(RM) test
-

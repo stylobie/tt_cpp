@@ -9,8 +9,10 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 #include "nports.h"
+#include "resistance.h"
+#include "circuitreader.h"
 
-TEST_CASE("intialisation nports") {
+TEST_CASE("intialisation nports"){
     vector<complex<double>> parameters;
     parameters.push_back(5);
     parameters.push_back(50);
@@ -23,4 +25,28 @@ TEST_CASE("intialisation nports") {
     Nports source(type , parameters, connexions, name);
     string actualName = source.getName();
     CHECK(actualName == name); // should pass
+}
+
+TEST_CASE("initialisation resistance"){
+    Resistance resistance = Resistance("3", "4", 77.0, "R");
+    string name = resistance.getName();
+    CHECK(name == "R" );
+    double r = resistance.getValue();
+    CHECK(r == 77.0);
+}
+
+TEST_CASE("circuit reader"){ // ne fonctionnera pas quand il y aura les autres composantes
+    CircuitReader cr;
+    ifstream flux;
+    flux.open("spice.txt");
+    vector<Nports> composants;
+    cr.read(flux, composants);
+    CHECK(composants.size() == 2);
+    Nports c0 = composants[0];
+    CHECK(c0.getType() == "R");
+    CHECK(c0.getName() == "r"); 
+    Nports c1 = composants[1];
+    CHECK(c1.getType() == "R");
+    CHECK(c1.getName() == "r2");
+    
 }

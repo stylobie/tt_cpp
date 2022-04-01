@@ -1,6 +1,9 @@
 #include "nports.h"
 
-Nports::Nports(string& type, vector<complex<double>>& parameters, vector<string>& connexions, string& name){
+Nports::Nports(){
+    
+}
+Nports::Nports(string type, vector<complex<double>>& parameters, vector<string>& connexions, string name){
     this->type = type;
     this->parameters = parameters;
     this->connexions = connexions;
