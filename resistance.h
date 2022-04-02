@@ -7,13 +7,12 @@
 
 using namespace std;
 
-class Resistance : public Nports {
+class Resistance : public Nports
+{
 public:
     Resistance(string noeud1, string noeud2, double resistance, string name);
     double getValue();
-    
+
 private:
-
-
 };
 #endif /* resistance_h */

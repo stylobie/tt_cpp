@@ -1,25 +1,29 @@
 #ifndef nports_h
 #define nports_h
-#include <string>
 #include <complex>
+#include <string>
 #include <vector>
 
 using namespace std;
 
 class Nports {
-public:
-    Nports(string type, vector<complex<double>>& parameters, vector<string>& connexions, string name);
+   public:
+    Nports(string type, vector<double> &parameters, vector<string> &connexions,
+           string name);
     string getType();
-    vector<complex<double>> getParameters();
+    vector<double> getParameters();
     vector<string> getConnexions();
     string getName();
-protected: 
+    int getConnexionsCount();
+
+   protected:
     Nports();
     string type;
-    vector<complex<double>> parameters;
+    vector<double> parameters;
     vector<string> connexions;
     string name;
-private:
-    
+    int connextionsCount = 0;
+
+   private:
 };
 #endif /* nports_h */

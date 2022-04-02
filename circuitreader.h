@@ -5,14 +5,15 @@
 #include <string>
 #include <iostream>
 
-
-
 using namespace std;
 
-class CircuitReader {
+class CircuitReader
+{
 public:
     void read(istream &input, vector<Nports> &composants);
+
 private:
     void tokenize(string line, string delimiter, vector<string> &tokens);
+    void getName(string &token, string &name);
 };
 #endif /* circuitreader_h */

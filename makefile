@@ -15,12 +15,25 @@ nports.o: nports.cpp nports.h
 resistance.o: nports.o resistance.cpp resistance.h
 	$(CC) $(CFLAGS) -c resistance.cpp
 
+capacitor.o: nports.o capacitor.cpp capacitor.h
+	$(CC) $(CFLAGS) -c capacitor.cpp
+
+coil.o: nports.o coil.cpp coil.h
+	$(CC) $(CFLAGS) -c coil.cpp
+
+ground.o: nports.o ground.cpp ground.h
+	$(CC) $(CFLAGS) -c ground.cpp
+
+tensionsource.o: nports.o tensionsource.cpp tensionsource.h
+	$(CC) $(CFLAGS) -c tensionsource.cpp
+
+
 circuitreader.o: circuitreader.h circuitreader.cpp
 	$(CC) $(CFLAGS) -c circuitreader.cpp
 
 
-test: test.o nports.o resistance.o circuitreader.o
-	$(CC) $(CFLAGS) -o test test.o nports.o resistance.o circuitreader.o
+test: test.o nports.o resistance.o capacitor.o coil.o ground.o tensionsource.o circuitreader.o
+	$(CC) $(CFLAGS) -o test test.o nports.o resistance.o capacitor.o coil.o ground.o tensionsource.o circuitreader.o
 	./test
 
 test.o: test.cpp
