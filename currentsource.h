@@ -1,5 +1,5 @@
 /**
- * @file intensitysource.h
+ * @file currentsource.h
  * @author your name (you@domain.com)
  * @brief intensity source class
  * @version 0.1
@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2022
  * 
  */
-#ifndef intensitysource_h
-#define intensitysource_h
+#ifndef currentsource_h
+#define currentsource_h
 #include <complex>
 #include <string>
 #include <vector>
@@ -18,9 +18,9 @@
 
 using namespace std;
 
-class IntensitySource : public Nports {
+class CurrentSource : public Nports {
    public:
-    IntensitySource(string node1, string node2, double ac, double frequency,
+    CurrentSource(string node1, string node2, double ac, double frequency,
                   double dc, string name);
     double getAC();
     double getFrequency();
@@ -28,4 +28,4 @@ class IntensitySource : public Nports {
 
    private:
 };
-#endif /* intensitysource_h */
+#endif /* currentsource_h */

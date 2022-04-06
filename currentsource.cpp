@@ -1,5 +1,5 @@
 /**
- * @file intensitysource.cpp
+ * @file currentsource.cpp
  * @author your name (you@domain.com)
  * @brief intensity source class
  * @version 0.1
@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2022
  * 
  */
-#include "intensitysource.h"
+#include "currentsource.h"
 
 /**
  * @brief Construct a new Intensity Source:: Intensity Source object
@@ -20,7 +20,7 @@
  * @param dc 
  * @param name 
  */
-IntensitySource::IntensitySource(string node1, string node2, double ac,
+CurrentSource::CurrentSource(string node1, string node2, double ac,
                              double frequency, double dc, string name) {
     this->name = name;
     this->connexions.push_back(node1);
@@ -37,7 +37,7 @@ IntensitySource::IntensitySource(string node1, string node2, double ac,
  * 
  * @return double 
  */
-double IntensitySource::getAC() {
+double CurrentSource::getAC() {
     double value = this->parameters[0];
     return value;
 }
@@ -47,7 +47,7 @@ double IntensitySource::getAC() {
  * 
  * @return double 
  */
-double IntensitySource::getDC() {
+double CurrentSource::getDC() {
     double value = this->parameters[2];
     return value;
 }
@@ -57,7 +57,7 @@ double IntensitySource::getDC() {
  * 
  * @return double 
  */
-double IntensitySource::getFrequency() {
+double CurrentSource::getFrequency() {
     double value = this->parameters[1];
     return value;
 }
