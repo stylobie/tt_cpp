@@ -1,15 +1,15 @@
 /**
- * @file tensionsource.h
+ * @file intensitysource.h
  * @author your name (you@domain.com)
- * @brief tension source class
+ * @brief intensity source class
  * @version 0.1
  * @date 2022-04-05
  * 
  * @copyright Copyright (c) 2022
  * 
  */
-#ifndef tensionsource_h
-#define tensionsource_h
+#ifndef intensitysource_h
+#define intensitysource_h
 #include <complex>
 #include <string>
 #include <vector>
@@ -18,9 +18,9 @@
 
 using namespace std;
 
-class TensionSource : public Nports {
+class IntensitySource : public Nports {
    public:
-    TensionSource(string node1, string node2, double ac, double frequency,
+    IntensitySource(string node1, string node2, double ac, double frequency,
                   double dc, string name);
     double getAC();
     double getFrequency();
@@ -28,4 +28,4 @@ class TensionSource : public Nports {
 
    private:
 };
-#endif /* tensionsource_h */
+#endif /* intensitysource_h */

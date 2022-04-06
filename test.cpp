@@ -1,14 +1,18 @@
-//
-//  test.cpp
-//  TT_cpp
-//
-//  Created by admin on 22/03/2022.
-//
-
+/**
+ * @file test.cpp
+ * @author your name (you@domain.com)
+ * @brief test the program with unitary tests
+ * @version 0.1
+ * @date 2022-04-05
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #include <stdio.h>
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "circuitreader.h"
 #include "doctest.h"
+#include "mat.h"
 #include "nports.h"
 #include "resistance.h"
 
@@ -35,8 +39,7 @@ TEST_CASE("initialisation resistance") {
     CHECK(r == 77.0);
 }
 
-TEST_CASE("circuit reader") {  // ne fonctionnera pas quand il y aura les autres
-                               // composantes
+TEST_CASE("circuit reader") {
     CircuitReader cr;
     ifstream flux;
     flux.open("spice.txt");
@@ -49,4 +52,23 @@ TEST_CASE("circuit reader") {  // ne fonctionnera pas quand il y aura les autres
     Nports c1 = composants[1];
     CHECK(c1.getType() == "L");
     CHECK(c1.getName().empty());
+}
+
+void innerTest() { mat z(15, 15); }
+
+TEST_CASE("mat") {
+    mat x;
+    CHECK(x.getRow() == 1);
+    CHECK(x.getColumn() == 1);
+    mat y(2, 5);
+    CHECK(y.getRow() == 2);
+    CHECK(y.getColumn() == 5);
+    x = y;
+    CHECK(x.getRow() == 2);
+    CHECK(x.getColumn() == 5);
+    innerTest();
+    mat z = y;
+    z = x.transpose();
+    CHECK(z.getRow() == 5);
+    CHECK(z.getColumn() == 2);
 }

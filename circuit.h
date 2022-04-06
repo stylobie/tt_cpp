@@ -1,15 +1,15 @@
 /**
- * @file coil.h
+ * @file circuit.h
  * @author your name (you@domain.com)
- * @brief the coil class
+ * @brief class of the circuit
  * @version 0.1
  * @date 2022-04-05
  * 
  * @copyright Copyright (c) 2022
  * 
  */
-#ifndef coil_h
-#define coil_h
+#ifndef circuit_h
+#define circuit_h
 #include <complex>
 #include <string>
 #include <vector>
@@ -18,11 +18,14 @@
 
 using namespace std;
 
-class Coil : public Nports {
+
+class Circuit {
    public:
-    Coil(string node1, string node2, double inductance, string name);
-    double getValue();
+    Circuit() : components(){};
+    void read(string spiceFileName);
+    void clear();
 
    private:
+    vector<Nports> components;
 };
-#endif /* coil_h */
+#endif /* circuit_h */

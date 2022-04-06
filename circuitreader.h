@@ -1,3 +1,13 @@
+/**
+ * @file circuitReader.h
+ * @author your name (you@domain.com)
+ * @brief read the circuit spice txt
+ * @version 0.1
+ * @date 2022-04-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef circuitreader_h
 #define circuitreader_h
 #include "nports.h"

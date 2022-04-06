@@ -31,9 +31,20 @@ tensionsource.o: nports.o tensionsource.cpp tensionsource.h
 circuitreader.o: circuitreader.h circuitreader.cpp
 	$(CC) $(CFLAGS) -c circuitreader.cpp
 
+circuit.o: circuit.h circuit.cpp
+	$(CC) $(CFLAGS) -c circuit.cpp
 
-test: test.o nports.o resistance.o capacitor.o coil.o ground.o tensionsource.o circuitreader.o
-	$(CC) $(CFLAGS) -o test test.o nports.o resistance.o capacitor.o coil.o ground.o tensionsource.o circuitreader.o
+mat.o: mat.h mat.cpp
+	$(CC) $(CFLAGS) -c mat.cpp
+
+ij.o: ij.h ij.cpp
+	$(CC) $(CFLAGS) -c ij.cpp
+
+mataij.o: ij.h mat.h mataij.h mataij.cpp
+	$(CC) $(CFLAGS) -c mataij.cpp
+
+test: test.o nports.o resistance.o capacitor.o coil.o ground.o tensionsource.o circuitreader.o circuit.o mat.o ij.o mataij.o
+	$(CC) $(CFLAGS) -o test test.o nports.o resistance.o capacitor.o coil.o ground.o tensionsource.o circuitreader.o circuit.o mat.o ij.o mataij.o
 	./test
 
 test.o: test.cpp

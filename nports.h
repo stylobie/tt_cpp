@@ -1,3 +1,13 @@
+/**
+ * @file nports.h
+ * @author your name
+ * @brief Create the Nports class, the mother class of the components
+ * @version 0.1
+ * @date 2022-04-05
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #ifndef nports_h
 #define nports_h
 #include <complex>

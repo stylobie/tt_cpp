@@ -1,3 +1,13 @@
+/**
+ * @file circuitreader.cpp
+ * @author your name (you@domain.com)
+ * @brief read the circuit spice txt
+ * @version 0.1
+ * @date 2022-04-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include "circuitreader.h"
 
 #include <stdlib.h>
@@ -10,6 +20,12 @@
 
 using namespace std;
 
+/**
+ * @brief read the line (witch is tokenised) and adds to the composants the composant reeded
+ * 
+ * @param input a token here
+ * @param composants a vector of the composants witch consitutes the circuit
+ */
 void CircuitReader::read(istream &input, vector<Nports> &composants) {
     string line;
     while (getline(input, line)) {
@@ -63,6 +79,13 @@ void CircuitReader::read(istream &input, vector<Nports> &composants) {
     }
 }
 
+/**
+ * @brief take a full spice line, and separe it into tokens, depending of the delimiter, in spice the delimiter is " "
+ * 
+ * @param line 
+ * @param delimiter here in spice : " "
+ * @param tokens 
+ */
 void CircuitReader::tokenize(string line, string delimiter,
                              vector<string> &tokens) {
     size_t pos;
@@ -82,6 +105,12 @@ void CircuitReader::tokenize(string line, string delimiter,
     }
 }
 
+/**
+ * @brief return the name of the token read, return "" if not exist
+ * 
+ * @param token 
+ * @param name 
+ */
 void CircuitReader::getName(string &token, string &name) {
     name = token.length() > 1 ? token.substr(1, string::npos) : "";
 }

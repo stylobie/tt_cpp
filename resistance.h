@@ -1,3 +1,13 @@
+/**
+ * @file resistance.h
+ * @author your name (you@domain.com)
+ * @brief resistance class
+ * @version 0.1
+ * @date 2022-04-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef resistance_h
 #define resistance_h
 #include "nports.h"
@@ -10,7 +20,7 @@ using namespace std;
 class Resistance : public Nports
 {
 public:
-    Resistance(string noeud1, string noeud2, double resistance, string name);
+    Resistance(string node1, string node2, double resistance, string name);
     double getValue();
 
 private:
