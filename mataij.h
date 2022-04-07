@@ -21,18 +21,18 @@ class MatAij : protected mat {
     MatAij(const MatAij &other);
 
     MatAij &operator=(const MatAij &other);
-    // double& operator()(int i, int j);
+    //double& operator()(int i, int j);
     T operator[](ij);
     MatAij operator+(MatAij &other);
     void insert(int, int, T);
     friend std::ostream &operator<<(std::ostream &, MatAij &);
     MatAij transpose();
-
-    // vector<T> operator-(vector<T>, vector<T>);
-    // vector<T> operator+(vector<T>, vector<T>);
-
+    friend vector<T> operator-(vector<T>, vector<T>);
+    friend vector<T> operator+(vector<T>, vector<T>);
+    friend vector<T> operator*(T,vector<T>);
+    
     vector<T> matVect(vector<T>);
-    complex<double> dotsesq(vector<T>, vector<T>); 
+    T dotsesq(vector<T>, vector<T>); 
     vector<T> solve(vector<T>, vector<T>);
 };
 

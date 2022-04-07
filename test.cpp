@@ -10,9 +10,14 @@
  */
 #include <stdio.h>
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include <vector>
+
+#include "circuit.h"
 #include "circuitreader.h"
 #include "doctest.h"
+#include "ij.h"
 #include "mat.h"
+#include "mataij.h"
 #include "nports.h"
 #include "resistance.h"
 
@@ -45,6 +50,8 @@ TEST_CASE("circuit reader") {
     flux.open("spice.txt");
     vector<Nports> composants;
     cr.read(flux, composants);
+    // Circuit circ;
+    // circ.read("spice.txt");
     CHECK(composants.size() == 6);
     Nports c0 = composants[0];
     CHECK(c0.getType() == "V");
@@ -71,4 +78,37 @@ TEST_CASE("mat") {
     z = x.transpose();
     CHECK(z.getRow() == 5);
     CHECK(z.getColumn() == 2);
+}
+
+TEST_CASE("krylov") {
+    MatAij<double> A(3, 3);
+    vector<double> x;
+    x.push_back(0);
+    x.push_back(0);
+    x.push_back(0);
+    vector<double> b;
+    b.push_back(4);
+    b.push_back(-12);
+    b.push_back(17);
+
+    A.insert(0, 0, 2);
+    A.insert(0, 1, -1);
+    A.insert(0, 2, 0);
+
+    A.insert(1, 0, -6);
+    A.insert(1, 1, 5);
+    A.insert(1, 2, -4);
+
+    A.insert(2, 0, 3);
+    A.insert(2, 1, 4);
+    A.insert(2, 2, 0);
+    // x should be 3 2 1
+    vector<double> y;
+    y = A.solve(b, x);
+    CHECK(y[0] > 2.97);
+    CHECK(y[0] < 3.03);
+    CHECK(y[1] > 1.97);
+    CHECK(y[1] < 2.03);
+    CHECK(y[2] > 0.97);
+    CHECK(y[2] < 1.03);
 }

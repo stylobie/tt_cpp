@@ -21,8 +21,8 @@ ij& ij::operator=(const ij& other) {  // surcharge de l'operateur =
     return (*this);  // tjrs mettre "return (*this)" dans le constructeur par copie
 }
 
-int ij::geti() { return this->i; }
-int ij::getj() { return this->j; }
+int ij::geti() const{ return this->i; }
+int ij::getj() const{ return this->j; }
 
 ij ij::swap() {  // code de la méthode swap
     ij I;

@@ -29,9 +29,12 @@ MatAij<T>& MatAij<T>::operator=(const MatAij& other) {
 template <class T>
 T MatAij<T>::operator[](ij I) {
     typename map<ij, T>::iterator it;
-    it = this->coef.find[I];
+    it = this->coef.find(I);
     if (it != this->coef.end()) return it->second;
-    return (*this);
+#pragma GCC diagnostic ignored "-Wuninitialized"
+    T zero;
+    return zero;
+    // return (*this);
 }
 
 template <class T>
@@ -126,59 +129,17 @@ vector<T> MatAij<T>::matVect(vector<T> x) {
 }
 
 template <class T>
-vector<T> MatAij<T>::solve(vector<T> b, vector<T> x) {
-    int i, j, iter, maxIt = 300;
-    T zero, alpha, beta;
-    double testr, epsilon = 1e-9;
-    vector<vector<T>> d(maxIt, vector<T>(this->row, zero));
-    vector<vector<T>> Ad(maxIt, vector<T>(this->row, zero));
+vector<T> operator+(vector<T> x, vector<T> y) {
+    vector<T> z(x);
 
-    vector<vector<T>> r(this->row, zero);
-    vector<vector<T>> z(this->row, zero);
-    vector<double> AdAd(maxIt, 0.);
-
-    z = this->matVect(x);
-    r = b - z;
-    d[0] = r;
-    Ad[0] = this->matVect(d[0]);
-    testr = (double)dotsesq(r, r);  // à créer
-    iter = 0;
-    AdAd[iter] = (double)dotsesq(Ad[iter], Ad[iter]);
-
-    while ((testr > epsilon) && (iter < maxIt)) {
-        alpha = dotsesq(r, Ad[iter]) / AdAd[iter];
-        x = x + alpha * d[iter];
-        r = r - alpha / Ad[iter];
-
-        d[iter + 1] = r;
-        z = this->matVect(r);
-        Ad[iter + 1] = z;
-
-        for (int i = 0; i < iter + 1; i++) {
-            beta = -dotsesq(z, Ad[i] / AdAd[i]);
-            d[iter + 1] = d[iter + 1] + beta * d[i];
-            Ad[iter + 1] = Ad[iter + 1] + beta * Ad[i];
-        }
-
-        iter++;
-        AdAd[iter] = real(dotsesq(Ad[iter], Ad[iter]));
-    }
-
-    return x;
-}
-
-complex<double> dotsesq(vector<complex<double>> x, vector<complex<double>> y) {
-    complex<double> res;
     for (int i = 0; i < x.size(); i++) {
-        res = res + x[i] * y[i];
+        z[i] = z[i] + y[i];
     }
-
-    return res;
+    return z;
 }
-
-vector<complex<double>> operator-(vector<complex<double>> x,
-                                  vector<complex<double>> y) {
-    vector<complex<double>> z(x);
+template <class T>
+vector<T> operator-(vector<T> x, vector<T> y) {
+    vector<T> z(x);
 
     for (int i = 0; i < x.size(); i++) {
         z[i] = z[i] - y[i];
@@ -186,12 +147,105 @@ vector<complex<double>> operator-(vector<complex<double>> x,
     return z;
 }
 
-vector<complex<double>> operator+(vector<complex<double>> x,
-                                  vector<complex<double>> y) {
-    vector<complex<double>> z(x);
+template <class T>
+vector<T> operator*(T scal, vector<T> x) {
+    vector<T> z(x);
 
     for (int i = 0; i < x.size(); i++) {
-        z[i] = z[i] + y[i];
+        z[i] = z[i] * scal;
     }
     return z;
 }
+
+template <class T>
+vector<T> MatAij<T>::solve(vector<T> b, vector<T> x) {
+    int iter, maxIt = 300;
+    T zero, alpha, beta;
+    double testr, epsilon = 1e-9;
+    vector<vector<T>> d(maxIt, vector<T>(this->row, zero));
+    vector<vector<T>> Ad(maxIt, vector<T>(this->row, zero));
+
+    // vector<vector<T>> r(this->row, zero);
+    // vector<vector<T>> z(this->row, zero);
+
+    vector<T> r(this->row, zero);
+    vector<T> z(this->row, zero);
+    vector<T> AdAd(maxIt, zero);
+
+    z = this->matVect(x);
+    r = b - z;
+    d[0] = r;
+    Ad[0] = this->matVect(d[0]);
+    testr = (T)dotsesq(r, r);  // à créer
+    iter = 0;
+    AdAd[iter] = (T)dotsesq(Ad[iter], Ad[iter]);
+
+    while ((testr > epsilon) && (iter < maxIt)) {
+        alpha = (1 / AdAd[iter]) * dotsesq(r, Ad[iter]);
+        x = x + alpha * d[iter];
+        r = r - alpha * Ad[iter];
+
+        d[iter + 1] = r;
+        z = this->matVect(r);
+        Ad[iter + 1] = z;
+
+        for (int i = 0; i < iter + 1; i++) {
+            beta = -dotsesq(Ad[iter + 1], (1 / AdAd[i]) * Ad[i]);
+            d[iter + 1] = d[iter + 1] + beta * d[i];
+            Ad[iter + 1] = Ad[iter + 1] + beta * Ad[i];
+        }
+
+        iter++;
+        AdAd[iter] = real(dotsesq(Ad[iter], Ad[iter]));
+    }
+    std::cout<<x[0]<<"   "<<x[1]<<"   "<<x[2]<<"   "<<endl;
+    return x;
+}
+
+template <class T>
+T MatAij<T>::dotsesq(vector<T> x, vector<T> y) {
+    T res;
+    for (int i = 0; i < x.size(); i++) {
+        res = res + x[i] * y[i];
+    }
+
+    return res;
+}
+
+// vector<double> operator+(vector<double> x, vector<double> y) {
+//     vector<double> z(x);
+
+//     for (int i = 0; i < x.size(); i++) {
+//         z[i] = z[i] + y[i];
+//     }
+//     return z;
+// }
+// vector<double> operator-(vector<double> x, vector<double> y) {
+//     vector<double> z(x);
+
+//     for (int i = 0; i < x.size(); i++) {
+//         z[i] = z[i] - y[i];
+//     }
+//     return z;
+// }
+
+// vector<complex<double>> operator+(vector<complex<double>> x,
+//                                   vector<complex<double>> y) {
+//     vector<complex<double>> z(x);
+
+//     for (int i = 0; i < x.size(); i++) {
+//         z[i] = z[i] + y[i];
+//     }
+//     return z;
+// }
+// vector<complex<double>> operator-(vector<complex<double>> x,
+//                                   vector<complex<double>> y) {
+//     vector<complex<double>> z(x);
+
+//     for (int i = 0; i < x.size(); i++) {
+//         z[i] = z[i] - y[i];
+//     }
+//     return z;
+// }
+
+template class MatAij<double>;

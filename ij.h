@@ -16,8 +16,8 @@ class ij {
     ij &operator=(const ij &other);  // surcharge de l'opérateur =, bien mettre "&"
     bool operator==(const ij &other) const;
     friend inline bool operator<(const ij &ij1, const ij &ij2);  // surcharge de la fonction amie
-    int geti();
-    int getj();
+    int geti() const;
+    int getj() const;
     ij swap();                                              // méthode swap pour changer les lignes en colonnes et vice versa
     friend std::ostream &operator<<(std::ostream &, ij &);  // surcharge de l'operateur <<
    private:
