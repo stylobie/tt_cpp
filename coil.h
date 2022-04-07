@@ -20,7 +20,7 @@ using namespace std;
 
 class Coil : public Nports {
    public:
-    Coil(string node1, string node2, double inductance, string name);
+    Coil(int node1, int node2, double inductance, string name);
     double getValue();
 
    private:

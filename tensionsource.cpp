@@ -10,7 +10,7 @@
  */
 #include "tensionsource.h"
 
-TensionSource::TensionSource(string node1, string node2, double ac,
+TensionSource::TensionSource(int node1, int node2, double ac,
                              double frequency, double dc, string name) {
     this->name = name;
     this->connexions.push_back(node1);

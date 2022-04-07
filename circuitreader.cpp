@@ -4,9 +4,9 @@
  * @brief read the circuit spice txt
  * @version 0.1
  * @date 2022-04-05
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 #include "circuitreader.h"
 
@@ -22,7 +22,7 @@ using namespace std;
 
 /**
  * @brief read the line (witch is tokenised) and adds to the composants the composant reeded
- * 
+ *
  * @param input a token here
  * @param composants a vector of the composants witch consitutes the circuit
  */
@@ -44,19 +44,19 @@ void CircuitReader::read(istream &input, vector<Nports> &composants) {
             case 'R': {
                 double r = atof(tokens[3].c_str());
                 getName(composantAndName, name);
-                composants.push_back(Resistance(tokens[1], tokens[2], r, name));
+                composants.push_back(Resistance(getNodeId(tokens[1]), getNodeId(tokens[2]), r, name));
                 break;
             }
             case 'L': {
                 double l = atof(tokens[3].c_str());
                 getName(composantAndName, name);
-                composants.push_back(Coil(tokens[1], tokens[2], l, name));
+                composants.push_back(Coil(getNodeId(tokens[1]), getNodeId(tokens[2]), l, name));
                 break;
             }
             case 'C': {
                 double c = atof(tokens[3].c_str());
                 getName(composantAndName, name);
-                composants.push_back(Capacitor(tokens[1], tokens[2], c, name));
+                composants.push_back(Capacitor(getNodeId(tokens[1]), getNodeId(tokens[2]), c, name));
                 break;
             }
             case 'V': {
@@ -64,13 +64,12 @@ void CircuitReader::read(istream &input, vector<Nports> &composants) {
                 double frequency = atof(tokens[4].c_str());
                 double dc = atof(tokens[5].c_str());
                 getName(composantAndName, name);
-                composants.push_back(TensionSource(tokens[1], tokens[2], ac,
-                                                   frequency, dc, name));
+                composants.push_back(TensionSource(getNodeId(tokens[1]), getNodeId(tokens[2]), ac, frequency, dc, name));
                 break;
             }
             case 'T': {
                 getName(composantAndName, name);
-                composants.push_back(Ground(tokens[1], name));
+                composants.push_back(Ground(getNodeId(tokens[1]), name));
                 break;
             }
             default:
@@ -81,13 +80,12 @@ void CircuitReader::read(istream &input, vector<Nports> &composants) {
 
 /**
  * @brief take a full spice line, and separe it into tokens, depending of the delimiter, in spice the delimiter is " "
- * 
- * @param line 
+ *
+ * @param line
  * @param delimiter here in spice : " "
- * @param tokens 
+ * @param tokens
  */
-void CircuitReader::tokenize(string line, string delimiter,
-                             vector<string> &tokens) {
+void CircuitReader::tokenize(string line, string delimiter, vector<string> &tokens) {
     size_t pos;
     while (line.length() > 0) {
         pos = line.find(delimiter);
@@ -107,10 +105,16 @@ void CircuitReader::tokenize(string line, string delimiter,
 
 /**
  * @brief return the name of the token read, return "" if not exist
- * 
- * @param token 
- * @param name 
+ *
+ * @param token
+ * @param name
  */
-void CircuitReader::getName(string &token, string &name) {
-    name = token.length() > 1 ? token.substr(1, string::npos) : "";
-}
+void CircuitReader::getName(string &token, string &name) { name = token.length() > 1 ? token.substr(1, string::npos) : ""; }
+
+/**
+ * @brief return the id of the node
+ *
+ * @param token
+ * @return int
+ */
+int CircuitReader::getNodeId(string &token) { return atoi(token.c_str()); }

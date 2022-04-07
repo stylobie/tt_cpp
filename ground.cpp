@@ -16,7 +16,7 @@
  * @param node1 only one node because it's the ground
  * @param name 
  */
-Ground::Ground(string node1, string name) {
+Ground::Ground(int node1, string name) {
     this->name = name;
     this->connexions.push_back(node1);
     this->type = "T";

@@ -19,20 +19,20 @@ using namespace std;
 
 class Nports {
    public:
-    Nports(string type, vector<double> &parameters, vector<string> &connexions,
+    Nports(string type, vector<double> &parameters, vector<int> &connexions,
            string name);
     string getType();
     vector<double> getParameters();
-    vector<string> getConnexions();
+    vector<int> getConnexions();
     string getName();
     int getConnexionsCount();
-    void fillNodes(set<string> &nodes);
+    void fillNodes(set<int> &nodes);
 
    protected:
     Nports();
     string type;
     vector<double> parameters;
-    vector<string> connexions;
+    vector<int> connexions;
     string name;
     int connextionsCount = 0;
 

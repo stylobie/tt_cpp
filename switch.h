@@ -20,7 +20,7 @@ using namespace std;
 
 class Switch : public Nports {
    public:
-    Switch(string node1, string node2, double onoff, string name);
+    Switch(int node1, int node2, double onoff, string name);
     double getValue();
 
    private:

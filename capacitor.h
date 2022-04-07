@@ -20,7 +20,7 @@ using namespace std;
 
 class Capacitor : public Nports {
    public:
-    Capacitor(string node1, string node2, double capacitance, string name);
+    Capacitor(int node1, int node2, double capacitance, string name);
     double getValue();
 
    private:

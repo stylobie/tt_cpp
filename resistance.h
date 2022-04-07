@@ -20,7 +20,7 @@ using namespace std;
 class Resistance : public Nports
 {
 public:
-    Resistance(string node1, string node2, double resistance, string name);
+    Resistance(int node1, int node2, double resistance, string name);
     double getValue();
 
 private:

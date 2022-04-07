@@ -27,7 +27,7 @@ Nports::Nports() {}
  * @param name the specific name of a port for example "s" for "Vs"
  */
 
-Nports::Nports(string type, vector<double> &parameters, vector<string> &connexions, string name) {
+Nports::Nports(string type, vector<double> &parameters, vector<int> &connexions, string name) {
     this->type = type;
     this->parameters = parameters;
     this->connexions = connexions;
@@ -51,9 +51,9 @@ vector<double> Nports::getParameters() { return this->parameters; }
 /**
  * @brief return the vector with the numbers of the connexions
  *
- * @return vector<string>
+ * @return vector<int>
  */
-vector<string> Nports::getConnexions() { return this->connexions; }
+vector<int> Nports::getConnexions() { return this->connexions; }
 
 /**
  * @brief return the name of the port
@@ -74,8 +74,8 @@ int Nports::getConnexionsCount() { return this->connextionsCount; }
  * 
  * @param nodes 
  */
-void Nports::fillNodes(set<string> &nodes) {
-    vector<string>::iterator it;
+void Nports::fillNodes(set<int> &nodes) {
+    vector<int>::iterator it;
     for (it = connexions.begin(); it != connexions.end(); it++) {
         nodes.insert(*it);
     }

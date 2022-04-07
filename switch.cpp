@@ -18,7 +18,7 @@
  * @param onoff 
  * @param name 
  */
-Switch::Switch(string node1, string node2, double onoff, string name) {
+Switch::Switch(int node1, int node2, double onoff, string name) {
     this->name = name;
     this->connexions.push_back(node1);
     this->connexions.push_back(node2);

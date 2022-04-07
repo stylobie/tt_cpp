@@ -25,5 +25,6 @@ public:
 private:
     void tokenize(string line, string delimiter, vector<string> &tokens);
     void getName(string &token, string &name);
+    int getNodeId(string &token);
 };
 #endif /* circuitreader_h */

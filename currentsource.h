@@ -20,7 +20,7 @@ using namespace std;
 
 class CurrentSource : public Nports {
    public:
-    CurrentSource(string node1, string node2, double ac, double frequency,
+    CurrentSource(int node1, int node2, double ac, double frequency,
                   double dc, string name);
     double getAC();
     double getFrequency();

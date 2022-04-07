@@ -45,7 +45,7 @@ void Circuit::clear() { components.clear(); }
  *
  * @param nodes
  */
-void Circuit::fillNodes(set<string> &nodes) {
+void Circuit::fillNodes(set<int> &nodes) {
     typename vector<Nports>::iterator it;
     for (it = components.begin(); it != components.end(); it++) {
         Nports component = *it;
@@ -59,14 +59,14 @@ void Circuit::fillNodes(set<string> &nodes) {
  * @param node 
  * @param nodeComponents 
  */
-void Circuit::fillComponents(string node,vector<Nports> &nodeComponents){
+void Circuit::fillComponents(int node,vector<Nports> &nodeComponents){
     typename vector<Nports>::iterator componentIt;
     for (componentIt = components.begin(); componentIt != components.end(); componentIt++) {
         Nports component = *componentIt;
-        vector<string> componentConnexion = component.getConnexions();
-        vector<string>::iterator connexionIt;
+        vector<int> componentConnexion = component.getConnexions();
+        vector<int>::iterator connexionIt;
         for (connexionIt = componentConnexion.begin(); connexionIt != componentConnexion.end(); connexionIt++){
-            string connexion = *connexionIt;
+            int connexion = *connexionIt;
             if(node ==  connexion){
                 nodeComponents.push_back(component);
             }

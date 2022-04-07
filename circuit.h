@@ -24,8 +24,8 @@ class Circuit {
     Circuit();
     void read(string spiceFileName);
     void clear();
-    void fillNodes(set<string> &node); 
-    void fillComponents(string node,vector<Nports> &nodeComponents);
+    void fillNodes(set<int> &node); 
+    void fillComponents(int node,vector<Nports> &nodeComponents);
 
    private:
     vector<Nports> components;

@@ -18,7 +18,7 @@
  * @param capacitance the capacitance of the capacitor
  * @param name the name of the capacitor
  */
-Capacitor::Capacitor(string node1, string node2, double capacitance,
+Capacitor::Capacitor(int node1, int node2, double capacitance,
                      string name) {
     this->name = name;
     this->connexions.push_back(node1);

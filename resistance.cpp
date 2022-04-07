@@ -10,7 +10,7 @@
  */
 #include "resistance.h"
 
-Resistance::Resistance(string node1, string node2, double resistance, string name)
+Resistance::Resistance(int node1, int node2, double resistance, string name)
 {
     this->name = name;
     this->connexions.push_back(node1);

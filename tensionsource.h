@@ -20,7 +20,7 @@ using namespace std;
 
 class TensionSource : public Nports {
    public:
-    TensionSource(string node1, string node2, double ac, double frequency,
+    TensionSource(int node1, int node2, double ac, double frequency,
                   double dc, string name);
     double getAC();
     double getFrequency();

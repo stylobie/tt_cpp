@@ -18,7 +18,7 @@
  * @param inductance 
  * @param name 
  */
-Coil::Coil(string node1, string node2, double inductance, string name) {
+Coil::Coil(int node1, int node2, double inductance, string name) {
     this->name = name;
     this->connexions.push_back(node1);
     this->connexions.push_back(node2);

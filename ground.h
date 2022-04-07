@@ -18,7 +18,7 @@ using namespace std;
 class Ground : public Nports
 {
 public:
-    Ground(string node1, string name);
+    Ground(int node1, string name);
 
 private:
 };

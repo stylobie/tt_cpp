@@ -20,7 +20,7 @@
  * @param dc 
  * @param name 
  */
-CurrentSource::CurrentSource(string node1, string node2, double ac,
+CurrentSource::CurrentSource(int node1, int node2, double ac,
                              double frequency, double dc, string name) {
     this->name = name;
     this->connexions.push_back(node1);
