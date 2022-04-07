@@ -13,7 +13,7 @@
 #include <complex>
 #include <string>
 #include <vector>
-
+#include <set>
 #include "nports.h"
 
 using namespace std;
@@ -21,9 +21,11 @@ using namespace std;
 
 class Circuit {
    public:
-    Circuit() : components(){};
+    Circuit();
     void read(string spiceFileName);
     void clear();
+    void fillNodes(set<string> &node); 
+    void fillComponents(string node,vector<Nports> &nodeComponents);
 
    private:
     vector<Nports> components;

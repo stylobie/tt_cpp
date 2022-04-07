@@ -10,6 +10,7 @@
  */
 #include <stdio.h>
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include <set>
 #include <vector>
 
 #include "circuit.h"
@@ -55,10 +56,10 @@ TEST_CASE("circuit reader") {
     CHECK(composants.size() == 6);
     Nports c0 = composants[0];
     CHECK(c0.getType() == "V");
-    CHECK(c0.getName() == "s");
+    CHECK(c0.getName() == "v1");
     Nports c1 = composants[1];
     CHECK(c1.getType() == "L");
-    CHECK(c1.getName().empty());
+    CHECK(c1.getName()=="l1");
 }
 
 void innerTest() { mat z(15, 15); }
@@ -111,4 +112,57 @@ TEST_CASE("krylov") {
     CHECK(y[1] < 2.03);
     CHECK(y[2] > 0.97);
     CHECK(y[2] < 1.03);
+}
+/**
+ * @brief return 0 if set s1 == s2, 1 if not
+ *
+ * @param s1
+ * @param s2
+ * @return int
+ */
+int compareSet(set<string> &s1, set<string> &s2) {
+    if (s1.size() == s2.size()) {
+        set<string>::iterator it1;
+        set<string>::iterator it2;
+        for (it1 = s1.begin(), it2 = s2.begin(); it1 == s1.end(); it1++, it2++) {
+            if (*it1 != *it2) {
+                return 1;
+            }
+        }
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
+TEST_CASE("circuit") {
+    Circuit c;
+    c.read("spice.txt");
+    set<string> nodes;
+    c.fillNodes(nodes);
+    set<string> expected;
+    expected.insert("1");
+    expected.insert("2");
+    expected.insert("3");
+    expected.insert("4");
+    int succes = compareSet(nodes, expected);
+    cout << succes << endl;
+    CHECK(compareSet(nodes, expected)==0);
+
+    vector<Nports> componentsNode1;
+    c.fillComponents("1", componentsNode1);
+    CHECK(componentsNode1.size() == 4);
+    cout<<componentsNode1.size()<<endl;
+    set<string> names;
+    names.insert("v1");
+    names.insert("r2");
+    names.insert("c1");
+    names.insert("t1");
+    set<string> actualNames;
+    vector<Nports>::iterator it;
+    for (it = componentsNode1.begin(); it != componentsNode1.end(); it++) {
+        string name = (*it).getName();
+        actualNames.insert(name);
+    }
+    CHECK(compareSet(names, actualNames)==0);
 }

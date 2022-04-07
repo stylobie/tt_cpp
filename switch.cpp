@@ -22,7 +22,7 @@ Switch::Switch(string node1, string node2, double onoff, string name) {
     this->name = name;
     this->connexions.push_back(node1);
     this->connexions.push_back(node2);
-    this->type = "L";
+    this->type = "S";
     this->parameters.push_back(onoff);
     this->connextionsCount = 2;
 }

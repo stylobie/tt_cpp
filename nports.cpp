@@ -8,8 +8,10 @@
  * @copyright Copyright (c) 2022
  *
  */
-#include "nports.h"
 
+#include "nports.h"
+#include <set>
+using namespace std;
 /**
  * @brief Construct a new Nports:: Nports object
  *
@@ -25,8 +27,7 @@ Nports::Nports() {}
  * @param name the specific name of a port for example "s" for "Vs"
  */
 
-Nports::Nports(string type, vector<double> &parameters,
-               vector<string> &connexions, string name) {
+Nports::Nports(string type, vector<double> &parameters, vector<string> &connexions, string name) {
     this->type = type;
     this->parameters = parameters;
     this->connexions = connexions;
@@ -67,3 +68,15 @@ string Nports::getName() { return this->name; }
  * @return int
  */
 int Nports::getConnexionsCount() { return this->connextionsCount; }
+
+/**
+ * @brief fill distinct nodes into a set
+ * 
+ * @param nodes 
+ */
+void Nports::fillNodes(set<string> &nodes) {
+    vector<string>::iterator it;
+    for (it = connexions.begin(); it != connexions.end(); it++) {
+        nodes.insert(*it);
+    }
+}

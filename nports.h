@@ -13,6 +13,7 @@
 #include <complex>
 #include <string>
 #include <vector>
+#include <set>
 
 using namespace std;
 
@@ -25,6 +26,7 @@ class Nports {
     vector<string> getConnexions();
     string getName();
     int getConnexionsCount();
+    void fillNodes(set<string> &nodes);
 
    protected:
     Nports();
