@@ -1,0 +1,162 @@
+\hypertarget{class_nports}{}\doxysection{Nports Class Reference}
+\label{class_nports}\index{Nports@{Nports}}
+Inheritance diagram for Nports\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.523810cm]{class_nports}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_nports_a4b53af24d0dffaef44bcee4fe8d0394a}{Nports}} (string type, vector$<$ double $>$ \&parameters, vector$<$ int $>$ \&connexions, string name)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_nports}{Nports}}\+:\+: \mbox{\hyperlink{class_nports}{Nports}} object. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_nports_a772290f447e6f0020a2f088676cf85af}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em return the type of the port \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{class_nports_a143c97aa54832f99e07e6da608932294}{get\+Parameters}} ()
+\begin{DoxyCompactList}\small\item\em return the parameters of the port \end{DoxyCompactList}\item 
+vector$<$ int $>$ \mbox{\hyperlink{class_nports_ae17c400363fcffc788dd04142c5f2e4b}{get\+Connexions}} ()
+\begin{DoxyCompactList}\small\item\em return the vector with the numbers of the connexions \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_nports_ad3dca94998c6da1c8a1edd082fe2cfe9}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em return the name of the port \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_nports_ad9f8aad68849ef368a17e2297ca730bc}{get\+Connexions\+Count}} ()
+\begin{DoxyCompactList}\small\item\em return the count of the connexions \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_nports_a38f5b94270024a1c1c26ad45bee31fdb}{fill\+Nodes}} (set$<$ int $>$ \&nodes)
+\begin{DoxyCompactList}\small\item\em fill distinct nodes into a set \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_nports_a2665f17fde7f897119d9bf545baf6bd3}\label{class_nports_a2665f17fde7f897119d9bf545baf6bd3}} 
+{\bfseries Nports} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_nports}{Nports}}\+:\+: \mbox{\hyperlink{class_nports}{Nports}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_nports_afbe54542d14170d8aa784a87e1ca9b8d}\label{class_nports_afbe54542d14170d8aa784a87e1ca9b8d}} 
+string {\bfseries type}
+\item 
+\mbox{\Hypertarget{class_nports_a79c80e62cd15d9331bf5c37ed0922cd1}\label{class_nports_a79c80e62cd15d9331bf5c37ed0922cd1}} 
+vector$<$ double $>$ {\bfseries parameters}
+\item 
+\mbox{\Hypertarget{class_nports_ae8f5075811daa330b7669ecf37b415b3}\label{class_nports_ae8f5075811daa330b7669ecf37b415b3}} 
+vector$<$ int $>$ {\bfseries connexions}
+\item 
+\mbox{\Hypertarget{class_nports_a16f08926a25b9b24e53735c48accab40}\label{class_nports_a16f08926a25b9b24e53735c48accab40}} 
+string {\bfseries name}
+\item 
+\mbox{\Hypertarget{class_nports_ab60a1c2fe48a6eb614072d23809044ed}\label{class_nports_ab60a1c2fe48a6eb614072d23809044ed}} 
+int {\bfseries connextions\+Count} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_nports_a4b53af24d0dffaef44bcee4fe8d0394a}\label{class_nports_a4b53af24d0dffaef44bcee4fe8d0394a}} 
+\index{Nports@{Nports}!Nports@{Nports}}
+\index{Nports@{Nports}!Nports@{Nports}}
+\doxysubsubsection{\texorpdfstring{Nports()}{Nports()}}
+{\footnotesize\ttfamily Nports\+::\+Nports (\begin{DoxyParamCaption}\item[{string}]{type,  }\item[{vector$<$ double $>$ \&}]{parameters,  }\item[{vector$<$ int $>$ \&}]{connexions,  }\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_nports}{Nports}}\+:\+: \mbox{\hyperlink{class_nports}{Nports}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \char`\"{}\+T\char`\"{}, \char`\"{}\+R\char`\"{}, \char`\"{}\+L\char`\"{} etc depending of the type of the component \\
+\hline
+{\em parameters} & a vector of parameters such as the inductance for the coil \\
+\hline
+{\em connexions} & number of connexions of a port. 2 for a resistance for example \\
+\hline
+{\em name} & the specific name of a port for example \char`\"{}s\char`\"{} for \char`\"{}\+Vs\char`\"{} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_nports_a38f5b94270024a1c1c26ad45bee31fdb}\label{class_nports_a38f5b94270024a1c1c26ad45bee31fdb}} 
+\index{Nports@{Nports}!fillNodes@{fillNodes}}
+\index{fillNodes@{fillNodes}!Nports@{Nports}}
+\doxysubsubsection{\texorpdfstring{fillNodes()}{fillNodes()}}
+{\footnotesize\ttfamily void Nports\+::fill\+Nodes (\begin{DoxyParamCaption}\item[{set$<$ int $>$ \&}]{nodes }\end{DoxyParamCaption})}
+
+
+
+fill distinct nodes into a set 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nodes} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_nports_ae17c400363fcffc788dd04142c5f2e4b}\label{class_nports_ae17c400363fcffc788dd04142c5f2e4b}} 
+\index{Nports@{Nports}!getConnexions@{getConnexions}}
+\index{getConnexions@{getConnexions}!Nports@{Nports}}
+\doxysubsubsection{\texorpdfstring{getConnexions()}{getConnexions()}}
+{\footnotesize\ttfamily vector$<$ int $>$ Nports\+::get\+Connexions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+return the vector with the numbers of the connexions 
+
+\begin{DoxyReturn}{Returns}
+vector$<$int$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nports_ad9f8aad68849ef368a17e2297ca730bc}\label{class_nports_ad9f8aad68849ef368a17e2297ca730bc}} 
+\index{Nports@{Nports}!getConnexionsCount@{getConnexionsCount}}
+\index{getConnexionsCount@{getConnexionsCount}!Nports@{Nports}}
+\doxysubsubsection{\texorpdfstring{getConnexionsCount()}{getConnexionsCount()}}
+{\footnotesize\ttfamily int Nports\+::get\+Connexions\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+return the count of the connexions 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nports_ad3dca94998c6da1c8a1edd082fe2cfe9}\label{class_nports_ad3dca94998c6da1c8a1edd082fe2cfe9}} 
+\index{Nports@{Nports}!getName@{getName}}
+\index{getName@{getName}!Nports@{Nports}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Nports\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+return the name of the port 
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nports_a143c97aa54832f99e07e6da608932294}\label{class_nports_a143c97aa54832f99e07e6da608932294}} 
+\index{Nports@{Nports}!getParameters@{getParameters}}
+\index{getParameters@{getParameters}!Nports@{Nports}}
+\doxysubsubsection{\texorpdfstring{getParameters()}{getParameters()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nports\+::get\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+return the parameters of the port 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nports_a772290f447e6f0020a2f088676cf85af}\label{class_nports_a772290f447e6f0020a2f088676cf85af}} 
+\index{Nports@{Nports}!getType@{getType}}
+\index{getType@{getType}!Nports@{Nports}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily string Nports\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+return the type of the port 
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{nports_8h}{nports.\+h}}\item 
+\mbox{\hyperlink{nports_8cpp}{nports.\+cpp}}\end{DoxyCompactItemize}

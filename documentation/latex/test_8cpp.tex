@@ -1,0 +1,106 @@
+\hypertarget{test_8cpp}{}\doxysection{test.\+cpp File Reference}
+\label{test_8cpp}\index{test.cpp@{test.cpp}}
+
+
+test the program with unitary tests  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}circuit.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}circuitreader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}doctest.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ij.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mat.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mataij.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nports.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}resistance.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{test_8cpp_aa0ae97e7723034dea8bd40b49bcb9457}\label{test_8cpp_aa0ae97e7723034dea8bd40b49bcb9457}} 
+{\bfseries TEST\+\_\+\+CASE} (\char`\"{}intialisation nports\char`\"{})
+\item 
+\mbox{\Hypertarget{test_8cpp_a3b9ce562821ce274bf591136b82c0e3a}\label{test_8cpp_a3b9ce562821ce274bf591136b82c0e3a}} 
+{\bfseries TEST\+\_\+\+CASE} (\char`\"{}initialisation resistance\char`\"{})
+\item 
+\mbox{\Hypertarget{test_8cpp_a7cb224cc48507ab0ff2ea85cc8560892}\label{test_8cpp_a7cb224cc48507ab0ff2ea85cc8560892}} 
+{\bfseries TEST\+\_\+\+CASE} (\char`\"{}circuit reader\char`\"{})
+\item 
+\mbox{\Hypertarget{test_8cpp_ab1a48e945db88a14194d67546a4250cb}\label{test_8cpp_ab1a48e945db88a14194d67546a4250cb}} 
+void {\bfseries inner\+Test} ()
+\item 
+\mbox{\Hypertarget{test_8cpp_ab04459cfe760d2c448ed3171a15a03ca}\label{test_8cpp_ab04459cfe760d2c448ed3171a15a03ca}} 
+{\bfseries TEST\+\_\+\+CASE} (\char`\"{}mat\char`\"{})
+\item 
+\mbox{\Hypertarget{test_8cpp_adb13de1a5406b33490a277c4c707cdda}\label{test_8cpp_adb13de1a5406b33490a277c4c707cdda}} 
+{\bfseries TEST\+\_\+\+CASE} (\char`\"{}krylov\char`\"{})
+\item 
+int \mbox{\hyperlink{test_8cpp_a261f9302f12bcaff2d3833b891067891}{compare\+Set}} (set$<$ int $>$ \&s1, set$<$ int $>$ \&s2)
+\begin{DoxyCompactList}\small\item\em return 0 if set s1 == s2, 1 if not for a set of int \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{test_8cpp_ae4cfb32a44833eff66a5c48ef014c995}{compare\+Set}} (set$<$ string $>$ \&s1, set$<$ string $>$ \&s2)
+\begin{DoxyCompactList}\small\item\em return 0 if set s1 == s2, 1 if not for a set of string \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{test_8cpp_ae8467d0289c2e25f7a799080ccf03de4}\label{test_8cpp_ae8467d0289c2e25f7a799080ccf03de4}} 
+{\bfseries TEST\+\_\+\+CASE} (\char`\"{}circuit\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+test the program with unitary tests 
+
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/04-\/05
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test_8cpp_a261f9302f12bcaff2d3833b891067891}\label{test_8cpp_a261f9302f12bcaff2d3833b891067891}} 
+\index{test.cpp@{test.cpp}!compareSet@{compareSet}}
+\index{compareSet@{compareSet}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{compareSet()}{compareSet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int compare\+Set (\begin{DoxyParamCaption}\item[{set$<$ int $>$ \&}]{s1,  }\item[{set$<$ int $>$ \&}]{s2 }\end{DoxyParamCaption})}
+
+
+
+return 0 if set s1 == s2, 1 if not for a set of int 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & \\
+\hline
+{\em s2} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test_8cpp_ae4cfb32a44833eff66a5c48ef014c995}\label{test_8cpp_ae4cfb32a44833eff66a5c48ef014c995}} 
+\index{test.cpp@{test.cpp}!compareSet@{compareSet}}
+\index{compareSet@{compareSet}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{compareSet()}{compareSet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int compare\+Set (\begin{DoxyParamCaption}\item[{set$<$ string $>$ \&}]{s1,  }\item[{set$<$ string $>$ \&}]{s2 }\end{DoxyParamCaption})}
+
+
+
+return 0 if set s1 == s2, 1 if not for a set of string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & \\
+\hline
+{\em s2} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}

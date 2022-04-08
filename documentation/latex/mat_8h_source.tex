@@ -1,0 +1,28 @@
+\hypertarget{mat_8h_source}{}\doxysection{mat.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MAT\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MAT\_H\_}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{classmat}{mat}} \{}
+\DoxyCodeLine{7    \textcolor{keyword}{protected}:}
+\DoxyCodeLine{8     \textcolor{keywordtype}{int} row;}
+\DoxyCodeLine{9     \textcolor{keywordtype}{int} column;}
+\DoxyCodeLine{10     \textcolor{keyword}{static} \textcolor{keywordtype}{int} cpt;}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12    \textcolor{keyword}{public}:}
+\DoxyCodeLine{13     \textcolor{keywordtype}{int} getRow();}
+\DoxyCodeLine{14     \textcolor{keywordtype}{int} getColumn();}
+\DoxyCodeLine{15     \mbox{\hyperlink{classmat}{mat}}(\textcolor{keywordtype}{int} = 1, \textcolor{keywordtype}{int} = 1);}
+\DoxyCodeLine{16     \textcolor{keyword}{virtual} \mbox{\hyperlink{classmat}{\string~mat}}();}
+\DoxyCodeLine{17     \mbox{\hyperlink{classmat}{mat}}(\textcolor{keyword}{const} \mbox{\hyperlink{classmat}{mat}} \&other);}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \mbox{\hyperlink{classmat}{mat}} \&operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classmat}{mat}} \&other);}
+\DoxyCodeLine{20     \mbox{\hyperlink{classmat}{mat}} transpose();}
+\DoxyCodeLine{21 \};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* MAT\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,44 @@
+\hypertarget{mataij_8h_source}{}\doxysection{mataij.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef MatAijH}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define MatAijH}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <complex>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}ij.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}mat.h"{}}}
+\DoxyCodeLine{11 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_mat_aij}{MatAij}} : \textcolor{keyword}{protected} \mbox{\hyperlink{classmat}{mat}} \{}
+\DoxyCodeLine{15    \textcolor{keyword}{protected}:}
+\DoxyCodeLine{16     map<ij, T> coef;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18    \textcolor{keyword}{public}:}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_mat_aij}{MatAij}}(\textcolor{keywordtype}{int} = 1, \textcolor{keywordtype}{int} = 1);}
+\DoxyCodeLine{20     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_mat_aij}{\string~MatAij}}();}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_mat_aij}{MatAij}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_mat_aij}{MatAij}} \&other);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \mbox{\hyperlink{class_mat_aij}{MatAij}} \&operator=(\textcolor{keyword}{const} \mbox{\hyperlink{class_mat_aij}{MatAij}} \&other);}
+\DoxyCodeLine{24     \textcolor{comment}{//double\& operator()(int i, int j);}}
+\DoxyCodeLine{25     T operator[](\mbox{\hyperlink{classij}{ij}});}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_mat_aij}{MatAij}} operator+(\mbox{\hyperlink{class_mat_aij}{MatAij}} \&other);}
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} insert(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, T);}
+\DoxyCodeLine{28     \textcolor{keyword}{friend} std::ostream \&operator<<(std::ostream \&, \mbox{\hyperlink{class_mat_aij}{MatAij}} \&);}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_mat_aij}{MatAij}} transpose();}
+\DoxyCodeLine{30     \textcolor{keyword}{friend} vector<T> operator-\/(vector<T>, vector<T>);}
+\DoxyCodeLine{31     \textcolor{keyword}{friend} vector<T> operator+(vector<T>, vector<T>);}
+\DoxyCodeLine{32     \textcolor{keyword}{friend} vector<T> operator*(T,vector<T>);}
+\DoxyCodeLine{33     }
+\DoxyCodeLine{34     vector<T> matVect(vector<T>);}
+\DoxyCodeLine{35     T dotsesq(vector<T>, vector<T>); }
+\DoxyCodeLine{36     vector<T> solve(vector<T>, vector<T>);}
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* MatAijH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

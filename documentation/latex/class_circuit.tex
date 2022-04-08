@@ -1,0 +1,73 @@
+\hypertarget{class_circuit}{}\doxysection{Circuit Class Reference}
+\label{class_circuit}\index{Circuit@{Circuit}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_circuit_a6a9c21735a28f1222797d71ece99521c}\label{class_circuit_a6a9c21735a28f1222797d71ece99521c}} 
+{\bfseries Circuit} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_circuit}{Circuit}}\+:\+: \mbox{\hyperlink{class_circuit}{Circuit}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_circuit_accf60406d9ec0ec4a8b72c24df7813fd}{read}} (string spice\+File\+Name)
+\begin{DoxyCompactList}\small\item\em read a a file \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_circuit_aca7afc631b6fac87516f76a6074f6f11}\label{class_circuit_aca7afc631b6fac87516f76a6074f6f11}} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em delete the circuit \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_circuit_a785a52d8f3d5d4b385cd97327b3ad6b7}{fill\+Nodes}} (set$<$ int $>$ \&node)
+\begin{DoxyCompactList}\small\item\em fill distinct the nodes into a set \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_circuit_aa21b67ce653d0bc24844c303f755b9b3}{fill\+Components}} (int node, vector$<$ \mbox{\hyperlink{class_nports}{Nports}} $>$ \&node\+Components)
+\begin{DoxyCompactList}\small\item\em fill the components that are connected to the node node \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_circuit_aa21b67ce653d0bc24844c303f755b9b3}\label{class_circuit_aa21b67ce653d0bc24844c303f755b9b3}} 
+\index{Circuit@{Circuit}!fillComponents@{fillComponents}}
+\index{fillComponents@{fillComponents}!Circuit@{Circuit}}
+\doxysubsubsection{\texorpdfstring{fillComponents()}{fillComponents()}}
+{\footnotesize\ttfamily void Circuit\+::fill\+Components (\begin{DoxyParamCaption}\item[{int}]{node,  }\item[{vector$<$ \mbox{\hyperlink{class_nports}{Nports}} $>$ \&}]{node\+Components }\end{DoxyParamCaption})}
+
+
+
+fill the components that are connected to the node node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & \\
+\hline
+{\em node\+Components} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_circuit_a785a52d8f3d5d4b385cd97327b3ad6b7}\label{class_circuit_a785a52d8f3d5d4b385cd97327b3ad6b7}} 
+\index{Circuit@{Circuit}!fillNodes@{fillNodes}}
+\index{fillNodes@{fillNodes}!Circuit@{Circuit}}
+\doxysubsubsection{\texorpdfstring{fillNodes()}{fillNodes()}}
+{\footnotesize\ttfamily void Circuit\+::fill\+Nodes (\begin{DoxyParamCaption}\item[{set$<$ int $>$ \&}]{nodes }\end{DoxyParamCaption})}
+
+
+
+fill distinct the nodes into a set 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nodes} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_circuit_accf60406d9ec0ec4a8b72c24df7813fd}\label{class_circuit_accf60406d9ec0ec4a8b72c24df7813fd}} 
+\index{Circuit@{Circuit}!read@{read}}
+\index{read@{read}!Circuit@{Circuit}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Circuit\+::read (\begin{DoxyParamCaption}\item[{string}]{spice\+File\+Name }\end{DoxyParamCaption})}
+
+
+
+read a a file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spice\+File\+Name} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{circuit_8h}{circuit.\+h}}\item 
+\mbox{\hyperlink{circuit_8cpp}{circuit.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,29 @@
+\hypertarget{circuit_8h_source}{}\doxysection{circuit.\+h}
+\mbox{\hyperlink{circuit_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef circuit\_h}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define circuit\_h}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <complex>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{nports_8h}{nports.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{class_circuit}{Circuit}} \{}
+\DoxyCodeLine{23    \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_circuit_a6a9c21735a28f1222797d71ece99521c}{Circuit}}();}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_circuit_accf60406d9ec0ec4a8b72c24df7813fd}{read}}(\textcolor{keywordtype}{string} spiceFileName);}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_circuit_aca7afc631b6fac87516f76a6074f6f11}{clear}}();}
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_circuit_a785a52d8f3d5d4b385cd97327b3ad6b7}{fillNodes}}(set<int> \&node); }
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_circuit_aa21b67ce653d0bc24844c303f755b9b3}{fillComponents}}(\textcolor{keywordtype}{int} node,vector<Nports> \&nodeComponents);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30    \textcolor{keyword}{private}:}
+\DoxyCodeLine{31     vector<Nports> components;}
+\DoxyCodeLine{32 \};}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* circuit\_h */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,69 @@
+\hypertarget{class_mat_aij}{}\doxysection{Mat\+Aij\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_mat_aij}\index{MatAij$<$ T $>$@{MatAij$<$ T $>$}}
+Inheritance diagram for Mat\+Aij\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mat_aij}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_mat_aij_a4ca0388efb9a0e552a9ab1da82485a34}\label{class_mat_aij_a4ca0388efb9a0e552a9ab1da82485a34}} 
+{\bfseries Mat\+Aij} (int=1, int=1)
+\item 
+\mbox{\Hypertarget{class_mat_aij_a8906a743c18a4010c7dc38b087a4431d}\label{class_mat_aij_a8906a743c18a4010c7dc38b087a4431d}} 
+{\bfseries Mat\+Aij} (const \mbox{\hyperlink{class_mat_aij}{Mat\+Aij}} \&other)
+\item 
+\mbox{\Hypertarget{class_mat_aij_a823c03c1c8892e31fe2f168c4393692a}\label{class_mat_aij_a823c03c1c8892e31fe2f168c4393692a}} 
+\mbox{\hyperlink{class_mat_aij}{Mat\+Aij}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_mat_aij}{Mat\+Aij}} \&other)
+\item 
+\mbox{\Hypertarget{class_mat_aij_ac7e0ebcb230503ce0a33a3a99078d23b}\label{class_mat_aij_ac7e0ebcb230503ce0a33a3a99078d23b}} 
+T {\bfseries operator\mbox{[}$\,$\mbox{]}} (\mbox{\hyperlink{classij}{ij}})
+\item 
+\mbox{\Hypertarget{class_mat_aij_a30871cd7682001734acb747ff48a25cc}\label{class_mat_aij_a30871cd7682001734acb747ff48a25cc}} 
+\mbox{\hyperlink{class_mat_aij}{Mat\+Aij}} {\bfseries operator+} (\mbox{\hyperlink{class_mat_aij}{Mat\+Aij}} \&other)
+\item 
+\mbox{\Hypertarget{class_mat_aij_a66ae6600e82239a987e034052ef642c8}\label{class_mat_aij_a66ae6600e82239a987e034052ef642c8}} 
+void {\bfseries insert} (int, int, T)
+\item 
+\mbox{\Hypertarget{class_mat_aij_a7f3c55d71fdf7be05309840920285af1}\label{class_mat_aij_a7f3c55d71fdf7be05309840920285af1}} 
+\mbox{\hyperlink{class_mat_aij}{Mat\+Aij}} {\bfseries transpose} ()
+\item 
+\mbox{\Hypertarget{class_mat_aij_a228adda15d1ff32aa4a4a335f29680c2}\label{class_mat_aij_a228adda15d1ff32aa4a4a335f29680c2}} 
+vector$<$ T $>$ {\bfseries mat\+Vect} (vector$<$ T $>$)
+\item 
+\mbox{\Hypertarget{class_mat_aij_a5d8d66c0fb4a6fb9e85276c4c5422a73}\label{class_mat_aij_a5d8d66c0fb4a6fb9e85276c4c5422a73}} 
+T {\bfseries dotsesq} (vector$<$ T $>$, vector$<$ T $>$)
+\item 
+\mbox{\Hypertarget{class_mat_aij_a55966fa946cae1fcd0146bffd2f1f240}\label{class_mat_aij_a55966fa946cae1fcd0146bffd2f1f240}} 
+vector$<$ T $>$ {\bfseries solve} (vector$<$ T $>$, vector$<$ T $>$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_mat_aij_aba6a8c3047836aac3884792e6fb21b40}\label{class_mat_aij_aba6a8c3047836aac3884792e6fb21b40}} 
+map$<$ \mbox{\hyperlink{classij}{ij}}, T $>$ {\bfseries coef}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_mat_aij_a23dfd50294dcb0af0d7802f0ee77e741}\label{class_mat_aij_a23dfd50294dcb0af0d7802f0ee77e741}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&, \mbox{\hyperlink{class_mat_aij}{Mat\+Aij}} \&)
+\item 
+\mbox{\Hypertarget{class_mat_aij_a049f168f4a0ad578265c17f573e977f2}\label{class_mat_aij_a049f168f4a0ad578265c17f573e977f2}} 
+vector$<$ T $>$ {\bfseries operator-\/} (vector$<$ T $>$, vector$<$ T $>$)
+\item 
+\mbox{\Hypertarget{class_mat_aij_a57b0b00cdb076c36b69aa51e97b6c7e8}\label{class_mat_aij_a57b0b00cdb076c36b69aa51e97b6c7e8}} 
+vector$<$ T $>$ {\bfseries operator+} (vector$<$ T $>$, vector$<$ T $>$)
+\item 
+\mbox{\Hypertarget{class_mat_aij_af34624af2a18dea57790ba758f346bc3}\label{class_mat_aij_af34624af2a18dea57790ba758f346bc3}} 
+vector$<$ T $>$ {\bfseries operator$\ast$} (T, vector$<$ T $>$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mataij.\+h\item 
+mataij.\+cpp\end{DoxyCompactItemize}

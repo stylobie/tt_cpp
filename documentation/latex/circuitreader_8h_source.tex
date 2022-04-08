@@ -1,0 +1,26 @@
+\hypertarget{circuitreader_8h_source}{}\doxysection{circuitreader.\+h}
+\mbox{\hyperlink{circuitreader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef circuitreader\_h}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define circuitreader\_h}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{nports_8h}{nports.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_circuit_reader}{CircuitReader}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_circuit_reader_a1eeb3f9656d22349598df76d17777b96}{read}}(istream \&input, vector<Nports> \&composants);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{private}:}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} tokenize(\textcolor{keywordtype}{string} line, \textcolor{keywordtype}{string} delimiter, vector<string> \&tokens);}
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} getName(\textcolor{keywordtype}{string} \&token, \textcolor{keywordtype}{string} \&name);}
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} getNodeId(\textcolor{keywordtype}{string} \&token);}
+\DoxyCodeLine{29 \};}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* circuitreader\_h */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
